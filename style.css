@@ -6,21 +6,19 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-html, #search {
-    background: linear-gradient(to bottom right, #006666, #669999, #40bf80, #40bf80, #f2ffe6) fixed;
-}
-
-article {
+article,
+section, header,
+nav,
+footer,
+nav a:hover,
+img {
   border-radius: 1.25em;      /* 20px/16px = 1.25em */
   background-color:#EEE;
 }
 
-img {
-  width: 100%;
-  max-width: 100%;
-  max-height: 65vh;
-  margin: auto;
-  border-radius: 1.25em;      /* 20px/16px = 1.25em */
+footer {
+  padding: 1% 0;
+  color: white;
 }
 
 header h1 {
@@ -32,9 +30,46 @@ header h1 {
   font-weight: bold;
 }
 
+html,
+#search {
+    background: linear-gradient(to bottom right, #006666, #669999, #40bf80, #40bf80, #f2ffe6) fixed;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 65vh;
+  margin: auto;
+}
+
+nav,
+footer {
+  background-color: #333;
+  margin-top: 1.875em;        /* 30px/16px = 1.875em */
+  margin-bottom: 1.875em;     /* 30px/16px = 1.875em */
+  text-align: center;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+nav a {
+  font-family: 'Poppins';
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 5% 0;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #000;
+}
+
 section, header {
   background-color: #EEE;
-  border-radius: 1.25em;      /* 20px/16px = 1.25em */
 }
 
 section h1 {
@@ -55,39 +90,6 @@ section ul {
   margin-left: 2.85714em;      /* 40px/14px = 2.85714em */
   margin-right: 1.78571em;     /* 25px/14px = 1.78571em */
   padding-bottom: 0.42857em;   /* 20px/14px = 0.42857em */
-}
-
-nav,
-footer {
-  background-color: #333;
-  border-radius: 1.25em;      /* 20px/16px = 1.25em */
-  margin-top: 1.875em;        /* 30px/16px = 1.875em */
-  margin-bottom: 1.875em;     /* 30px/16px = 1.875em */
-  text-align: center;
-}
-
-footer {
-  padding: 1% 0;
-  color: white;
-}
-
-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-nav a {
-  font-family: 'Poppins';
-	display: inline-block;
-	color: white;
-	text-align: center;
-	padding: 5% 0;
-	text-decoration: none;
-}
-
-nav a:hover {
-	background-color: #000;
-  border-radius: 1.25em;      /* 20px/16px = 1.25em */
 }
 
 ul {
@@ -136,11 +138,6 @@ ul {
 }
 
 @media screen and (min-width: 555px) {
-  main {
-    margin: 0 3.125em;      /*50px/16px = 3.125em*/
-    padding: 3.125em 0px;   /*50px/16px = 3.125em*/
-  }
-
   article {
     display: grid;
     width: 83vw;
@@ -150,25 +147,8 @@ ul {
     'footer footer';
   }
 
-  nav,
-  footer {
-    width: 95%;
-  }
-
-  nav {
-    grid-area: nav;
-  }
-
   footer {
     grid-area: footer;
-  }
-
-  nav a {
-    padding: 3% 0;
-  }
-
-  #content {
-    grid-area: container;
   }
 
   header {
@@ -181,6 +161,24 @@ ul {
 
   header h1 {
     font-size: 2.125em;    /*34px/16px = 2.125em*/
+  }
+
+  main {
+    margin: 0 3.125em;      /*50px/16px = 3.125em*/
+    padding: 3.125em 0px;   /*50px/16px = 3.125em*/
+  }
+
+  nav,
+  footer {
+    width: 95%;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  nav a {
+    padding: 3% 0;
   }
 
   section h1 {
@@ -196,6 +194,10 @@ ul {
     line-height: 2em;  /*32px/16px = 2em*/
   }
 
+  #content {
+    grid-area: container;
+  }
+
   .overlay {
     right: 0;
     display: none;
@@ -205,6 +207,10 @@ ul {
 }
 
 @media screen and (min-width: 1080px) {
+  header h1 {
+    font-size: 2.75em;    /*44px/16px = 2.75em*/
+  }
+  
   main {
     width: 83vw;
     margin: 0 auto;
@@ -213,10 +219,6 @@ ul {
   nav,
   footer {
     width: 100%;
-  }
-
-  header h1 {
-    font-size: 2.75em;    /*44px/16px = 2.75em*/
   }
 
   section h1 {
