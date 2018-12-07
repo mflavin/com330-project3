@@ -6,12 +6,13 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-html {
+html, #search {
     background: linear-gradient(to bottom right, #006666, #669999, #40bf80, #40bf80, #f2ffe6) fixed;
 }
 
 article {
   border-radius: 20px;
+  background-color:#EEE;
 }
 
 img {
@@ -76,6 +77,7 @@ nav {
 }
 
 nav a {
+  font-family: 'Poppins';
 	display: inline-block;
 	color: white;
 	text-align: center;
@@ -88,6 +90,56 @@ nav a:hover {
   border-radius: 20px;
 }
 
+#load {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  list-style-type: disc;
+}
+
+#search {
+  font-size: 14px;
+  line-height: 28px;
+  border-radius: 20px;
+  margin: 10px 40px 25px 40px;
+  padding: 0 25px;
+}
+
+
+/* TESTING */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.popup {
+  margin: 50% 10%;
+  padding: 20px;
+  width: 70%;
+  position: relative;
+}
+
+.popup .close {
+  position: absolute;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* TESTING */
+
+
 @media screen and (min-width: 555px) {
   main {
     margin: 0 50px;
@@ -95,7 +147,12 @@ nav a:hover {
   }
 
   article {
-    background-color:#EEE; display: grid; border-radius: 20px; width:83vw; grid-template-areas: 'nav nav' 'header container' 'footer footer';
+    display: grid;
+    width:83vw;
+    grid-template-areas:
+    'nav nav'
+    'header container'
+    'footer footer';
   }
 
   nav,
@@ -117,7 +174,6 @@ nav a:hover {
 
   #content {
     grid-area: container;
-    margin-left: 10px;
   }
 
   header {
@@ -132,11 +188,6 @@ nav a:hover {
     font-size: 34px;
   }
 
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   section h1 {
     font-size: 20px;
   }
@@ -144,7 +195,8 @@ nav a:hover {
   section p,
   section ul,
   nav,
-  footer {
+  footer,
+  #search {
     font-size: 16px;
     line-height: 32px;
   }
@@ -172,7 +224,8 @@ nav a:hover {
   section p,
   section ul,
   nav,
-  footer {
+  footer,
+  #search {
     font-size: 18px;
     line-height: 36px;
   }
