@@ -6,8 +6,7 @@
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /* stylelint-enable */
 
-html,
-article {
+html {
     background: linear-gradient(to bottom right, #006666, #669999, #40bf80, #40bf80, #f2ffe6) fixed;
 }
 
@@ -46,8 +45,7 @@ section h1 {
 }
 
 section p,
-section ul
-nav {
+section ul {
   font-family: 'Poppins';
   color: #404040;
   font-weight: lighter;
@@ -58,15 +56,23 @@ nav {
   padding-bottom: 32px;
 }
 
-nav {
+nav,
+footer {
   background-color: #333;
   border-radius: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+footer {
+  padding: 1% 0;
+  color: white;
+}
+
+nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3);
 }
 
 nav a {
@@ -86,24 +92,31 @@ nav a:hover {
   main {
     margin: 0 50px;
     padding: 50px 0px;
-    display: grid;
-    grid-template-areas:
-    'nav nav'
-    'header container';
+  }
+
+  article {
+    background-color:#EEE; display: grid; border-radius: 20px; width:83vw; grid-template-areas: 'nav nav' 'header container' 'footer footer';
+  }
+
+  nav,
+  footer {
+    width: 95%;
   }
 
   nav {
     grid-area: nav;
-    width: 95%;
+  }
+
+  footer {
+    grid-area: footer;
   }
 
   nav a {
     padding: 3% 0;
   }
 
-  article {
+  #content {
     grid-area: container;
-    width: 53vw;
     margin-left: 10px;
   }
 
@@ -112,18 +125,14 @@ nav a:hover {
   }
 
   header, img {
-    width: 30vw;
-  }
-
-  section {
-    width: 50vw;
+    width: 25vw;
   }
 
   header h1 {
     font-size: 34px;
   }
 
-  #hobbies ul {
+  ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -134,7 +143,8 @@ nav a:hover {
 
   section p,
   section ul,
-  nav {
+  nav,
+  footer {
     font-size: 16px;
     line-height: 32px;
   }
@@ -146,17 +156,9 @@ nav a:hover {
     margin: 0 auto;
   }
 
-  #skills ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  nav {
+  nav,
+  footer {
     width: 100%;
-  }
-
-  article {
-    margin-left: 5%;
   }
 
   header h1 {
@@ -169,7 +171,8 @@ nav a:hover {
 
   section p,
   section ul,
-  nav {
+  nav,
+  footer {
     font-size: 18px;
     line-height: 36px;
   }
